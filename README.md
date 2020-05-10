@@ -3,9 +3,10 @@ Application that can be used to write, save, and delete notes, using Express bac
 
 
 ## Latest Commit  
--Updated index.js to include a unique note ID  
+-Added delete method to remove notes with a specified unique ID  
 
 ## Previous Commits  
+-Updated index.js to include a unique note ID  
 -Required node FS module    
 -Post requests now modify db.json  
 -Setup server.js with localhost PORT  

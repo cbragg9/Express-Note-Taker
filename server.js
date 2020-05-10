@@ -47,6 +47,25 @@ app.post("/api/notes", function (req, res) {
     res.json("Success");
 });
 
+// DELETE: 
+app.delete("/api/notes/:id", function (req, res) {
+    var noteURLID = req.params.id;
+    
+    // Loop through the notes array, when the ID is reached, remove the item at that index, re-write the edited JSON to db.json
+    dbJSON.forEach(element => {
+        if (noteURLID === element.id) {
+            dbJSON.splice(dbJSON.indexOf(element), 1);
+
+            fs.writeFile("./db/db.json", JSON.stringify(dbJSON), function (err) {
+                if (err) throw err;
+                console.log("Successfully removed data to db.json")
+            });
+        } 
+    });
+
+    res.json("Success");
+});
+
 // Initialize Server
 app.listen(PORT, () => {
     console.log(`App is listening on PORT ${PORT}...`)
