@@ -41,10 +41,9 @@ app.post("/api/notes", function (req, res) {
 
     fs.writeFile("./db/db.json", JSON.stringify(dbJSON), function (err) {
         if (err) throw err;
-        console.log("Successfully added data to db.json")
     });
 
-    res.json("Success");
+    res.send(console.log("Successfully ADDED data to db.json"));
 });
 
 // DELETE: 
@@ -58,12 +57,11 @@ app.delete("/api/notes/:id", function (req, res) {
 
             fs.writeFile("./db/db.json", JSON.stringify(dbJSON), function (err) {
                 if (err) throw err;
-                console.log("Successfully removed data to db.json")
             });
         } 
     });
 
-    res.json("Success");
+    res.send(console.log("Successfully REMOVED data from db.json"));
 });
 
 // Initialize Server
