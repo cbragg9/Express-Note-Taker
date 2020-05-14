@@ -24,9 +24,6 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "public/notes.html"));
 });
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "public/index.html"));
-// });
 
 // Route Handling: API
 // GET:
@@ -62,6 +59,11 @@ app.delete("/api/notes/:id", function (req, res) {
     });
 
     res.send(console.log("Successfully REMOVED data from db.json"));
+});
+
+// Catch all, must be declared after other routes
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 // Initialize Server

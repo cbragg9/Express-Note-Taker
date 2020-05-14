@@ -21,10 +21,11 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ![Deployed Note-Taker](https://media.giphy.com/media/lMCHjl6ZI9DgifcIAG/giphy.gif)
 
 ## Latest Commit  
--Updated Readme.md
--Updated POST and DELETE res.send    
+-Added get("*") route  
 
 ## Previous Commits  
+-Updated Readme.md
+-Updated POST and DELETE res.send    
 -Removed note ID from being displayed on note  
 -Added start script to package.json  
 -Added delete method to remove notes with a specified unique ID  
